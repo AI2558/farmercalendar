@@ -10,18 +10,24 @@
 	<!-- Main component for a primary marketing message or call to action -->
 	<div class="jumbotron">
 		<?php
+		//////////////////////////////////////////////////////////////////////////////////////
 		// $json = file_get_contents('http://128.199.112.126:3000/product/KIS9987');
-		$json = file_get_contents('http://158.108.229.231:8080/CropCalendarServer/api/ftocservice/');
-		$obj = json_decode($json);
-		
-		// echo $obj;
-		echo '<pre>';
-		print_r($json);
-		echo '</pre>';
-		echo '<pre>';
-		print_r($obj);
-		echo '</pre>';
+		if ($url_api_value != null) {
+			$json = file_get_contents("http://" . $url_api_value . ":8080/CropCalendarServer/api/ftocservice/");
+			$obj = json_decode($json);
+
+			// echo $obj;
+			echo '<pre>Current server: ';
+			print_r($url_api_value);
+			echo '</pre>';
+			echo '<pre>';
+			print_r($obj);
+			echo '</pre>';
+		}
+		//////////////////////////////////////////////////////////////////////////////////////
 		?>
+
+		
 		<!-- <?= image_asset("logo_kasetsart.gif"); ?> -->
 		<?= $this -> session -> userdata('item'); ?>
 		<h1>ปฏิทินล้นเกวียน</h1>

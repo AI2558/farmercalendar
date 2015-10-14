@@ -48,7 +48,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a href="about">เกี่ยวกับ</a>
 						</li>
 					</ul>
-					
+					<ul class="nav navbar-nav navbar-right">
+						<form role="form" class="form-inline" id="submit_url" name="submit_url" action="<?= base_url('home/value') ?>" method="post">
+							<?php if($url_api_value != null)  { ?>
+							<div class="form-group">
+								<input type="text" class="form-control" id="url_api" name="url_api" placeholder="URL" value=<?= $url_api_value ?> />
+							</div>
+							<?php } else { ?>
+							<div class="form-group">
+								<input type="text" class="form-control" id="url_api" name="url_api" placeholder="URL" />
+							</div>
+							<?php } ?>	
+								
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>

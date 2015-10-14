@@ -17,16 +17,32 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function __construct() 
-	{
+	public function __construct() {
 		parent::__construct();
 		$this -> session -> set_userdata('page', 'home');
-	} 
-	
-	public function index()
-	{
-		$this->load->view('header');
-		$this->load->view('home_view');
-		$this->load->view('footer');
+		
 	}
+
+	public function index() {
+		//////////////////////////////////////////////////////////////////////////////////////
+		$data["url_api_value"] = null;
+		//////////////////////////////////////////////////////////////////////////////////////
+		$this -> load -> view('header', $data);
+		$this -> load -> view("home_view", $data);
+		$this -> load -> view('footer');
+	}
+
+	public function value() {
+		//////////////////////////////////////////////////////////////////////////////////////
+		// print_r($_POST);
+		$data["url_api_value"] = $this -> input -> post('url_api');
+		// $url_api = $_POST['submit_url'];
+		// echo $url_api;
+		$this -> session -> set_userdata('url_api_session', $data["url_api_value"]);
+		//////////////////////////////////////////////////////////////////////////////////////
+		$this -> load -> view('header', $data);
+		$this -> load -> view("home_view", $data);
+		$this -> load -> view('footer');
+	}
+
 }
