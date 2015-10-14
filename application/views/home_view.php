@@ -11,7 +11,7 @@
 	<div class="jumbotron">
 		<?php
 		// $json = file_get_contents('http://128.199.112.126:3000/product/KIS9987');
-		$json = file_get_contents('http://10.2.12.183:8080/Cropcalendar/api/ftocservice/');
+		$json = file_get_contents('http://158.108.229.231:8080/CropCalendarServer/api/ftocservice/');
 		$obj = json_decode($json);
 		
 		// echo $obj;

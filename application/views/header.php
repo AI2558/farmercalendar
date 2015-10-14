@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 
 		<meta charset="utf-8">
@@ -26,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<body>
 		<!-- Fixed navbar -->
-		<?php $page = $this->session->userdata('page'); ?>
+		<?php $page = $this -> session -> userdata('page'); ?>
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -40,13 +41,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="<?= (($page == 'home') ?  'active' : 'last'); ?>">
+						<li class="<?= (($page == 'home') ? 'active' : 'last'); ?>">
 							<a href="home">หน้าแรก</a>
 						</li>
-						<li class="<?= (($page == 'about') ?  'active' : 'last'); ?>">
+						<li class="<?= (($page == 'about') ? 'active' : 'last'); ?>">
 							<a href="about">เกี่ยวกับ</a>
 						</li>
 					</ul>
+					
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
